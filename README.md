@@ -1,16 +1,77 @@
-# React + Vite
+# Memora
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Memora** is a modern Single Page Application (SPA) designed to help users learn efficiently using flashcards. Built with a robust technology stack including React, Redux Toolkit, and TailwindCSS, Memora offers a premium, responsive, and interactive user experience.
 
-Currently, two official plugins are available:
+![Memora Dashboard](https://images.unsplash.com/photo-1517842645767-c639042777db?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80) 
+*(Note: Screenshot placeholder)*
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## React Compiler
+-   **🗂️ Deck Management:** Create, organize, and delete flashcard decks with ease.
+-   **📝 Smart Card Editor:** Add, edit, and manage flashcards within each deck. Includes inline editing and rapid entry support.
+-   **🎓 Interactive Study Mode:**
+    -   **3D Flip Animations:** Engaging visualizations mimicking real physical cards.
+    -   **Progress Tracking:** Visual indicators of your study session progress.
+    -   **Session Feedback:** Celebrate your success upon completing a deck.
+-   **🔒 Data Persistence:** Never lose your progress. All data is automatically saved to `localStorage` using Redux Persist.
+-   **🎨 Premium Design:** A clean, modern UI built with TailwindCSS v4, featuring glassmorphism, smooth transitions, and a curated color palette.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tech Stack
 
-## Expanding the ESLint configuration
+This project strictly follows modern industry standards:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+| Layer | Technology |
+| :--- | :--- |
+| **Framework** | [React 18/19](https://react.dev/) + [Vite](https://vitejs.dev/) |
+| **State Management** | [Redux Toolkit (RTK)](https://redux-toolkit.js.org/) |
+| **Routing** | [React Router v7](https://reactrouter.com/) |
+| **Styling** | [TailwindCSS v4](https://tailwindcss.com/) |
+| **Persistence** | [Redux-Persist](https://github.com/rt2zz/redux-persist) |
+| **Icons** | [Lucide React](https://lucide.dev/) |
+
+## 🏗️ Architecture
+
+The project is structured using a **Feature-based architecture**, making it scalable and easy to maintain:
+
+```bash
+src/
+├── app/                 # Store configuration
+├── features/            # Business logic (Slices & Components by feature)
+│   ├── decks/           # Deck management logic
+│   └── cards/           # Flashcard logic
+├── components/          # Shared UI components
+├── pages/               # Main application views (Dashboard, Study, Detail)
+└── main.jsx             # Entry point
+```
+
+## 📦 Installation & Setup
+
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/folty7/Memora.git
+    cd Memora
+    ```
+
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
+
+3.  **Run the development server:**
+    ```bash
+    npm run dev
+    ```
+
+## 🔄 Resetting Data
+
+If you need to restore the default sample decks (React Fundamentals, Software Engineering, etc.):
+1.  Open `src/app/store.js`.
+2.  Change the `persistConfig.key` value (e.g., from `memora_v1` to `memora_v2`).
+3.  Reload the application.
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+---
+*Created by Andrej Folta*
