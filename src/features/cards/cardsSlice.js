@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
     items: [
+        // Spanish (deckId: '1')
         { id: 'c1', deckId: '1', front: 'Hola', back: 'Hello' },
         { id: 'c2', deckId: '1', front: 'Gracias', back: 'Thank you' },
         { id: 'c3', deckId: '1', front: 'Adiós', back: 'Goodbye' },
